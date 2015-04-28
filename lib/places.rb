@@ -4,8 +4,6 @@ class Places
 
   define_method(:initialize) do |description|
     @description = description
-    @places = Places.all()
-
   end
 
   define_method(:description) do
@@ -16,14 +14,11 @@ class Places
     @@all_places
   end
 
-#  define_method(:each) do |place|
-#    @places.each() = place
-#  end
+  define_method(:save) do
+    @@all_places.push(self)
+  end
 
-#  define_singleton_method(:save) do
-
-
-
-
-
+  define_singleton_method(:empty_spaces) do
+    @@all_places = []
+  end
 end

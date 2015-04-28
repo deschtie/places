@@ -10,7 +10,7 @@ end
 
 post("/places") do
   description = params.fetch("description")
-  places = Places.new(description)
-  places.save()
+  place = Places.new(description)
+  place.save()
   erb(:success)
 end
