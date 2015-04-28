@@ -9,12 +9,17 @@ describe(Places) do
     end
   end
 
-  describe(".empty_place") do
-    it("gives the user an empty array where he/she will post places traveled") do
-    expect(Places.all()).to(eq([]))
+  describe("#each") do
+    it("identifies the individual places in the Place class") do
+      test_place = Places.each() do |place|
+        expect(Places.each()).to(eq(test_place))
+      end
     end
   end
 
-
-  
+  describe(".empty_place") do
+      it("gives the user an empty array where he/she will post places traveled") do
+        expect(Places.all()).to(eq([]))
+    end
+  end
 end
