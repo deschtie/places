@@ -1,4 +1,4 @@
-class Places
+class Place
 
   @@all_places = []
 

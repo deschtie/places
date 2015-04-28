@@ -1,16 +1,16 @@
 require("sinatra")
 require("sinatra/reloader")
-require("./lib/places")
+require("./lib/place")
 also_reload("lib/**/*.rb")
 
 get("/") do
-  @places = Places.all()
+  @places = Place.all()
   erb(:index)
 end
 
-post("/places") do
+post("/place") do
   description = params.fetch("description")
-  place = Places.new(description)
+  place = Place.new(description)
   place.save()
   erb(:success)
 end
