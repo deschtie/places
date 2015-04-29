@@ -1,17 +1,18 @@
 require('rspec')
 require('place')
 
+
+
 describe(Place) do
+
+  before() do
+    Place.clear()
+  end
+
   describe("#description") do
     it("lets user give it a description of where he/she has traveled") do
     test_Adventure = Place.new("LA, CA")
     expect(test_Adventure.description()).to(eq("LA, CA"))
-    end
-  end
-
-  describe(".empty_place") do
-    it("gives the user an empty array where he/she will post places traveled") do
-        expect(Place.all()).to(eq([]))
     end
   end
 
@@ -22,7 +23,6 @@ describe(Place) do
       expect(Place.all()).to(eq([test_places]))
     end
   end
-
 
   describe(".clear") do
     it("clears the array") do
